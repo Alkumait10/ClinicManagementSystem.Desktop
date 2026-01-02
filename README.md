@@ -43,3 +43,8 @@ This project is built using **.NET Framework** and follows the **3-Tier Architec
 
 ## 📌 Project Status
 🟡 Learning & Practice Project
+
+---
+
+## 👨‍💻 Author
+Alkumait Ghanem
