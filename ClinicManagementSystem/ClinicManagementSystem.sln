@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36811.4 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagementSystem.Presentation", "ClinicManagementSystem.Presentation\ClinicManagementSystem.Presentation.csproj", "{B6E4905F-E7AC-4F5A-AC7E-F2DADE61DE5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagementSystem.BuisnessLogic", "ClinicManagementSystem.BuisnessLogic\ClinicManagementSystem.BuisnessLogic.csproj", "{BDA387ED-2BE0-4DEA-A9E3-627831080B4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManagementSystem.DataAccess", "ClinicManagementSystem.DataAccess\ClinicManagementSystem.DataAccess.csproj", "{08547697-653F-48E8-8E5E-F19865A6BB4E}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6E4905F-E7AC-4F5A-AC7E-F2DADE61DE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E4905F-E7AC-4F5A-AC7E-F2DADE61DE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E4905F-E7AC-4F5A-AC7E-F2DADE61DE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E4905F-E7AC-4F5A-AC7E-F2DADE61DE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDA387ED-2BE0-4DEA-A9E3-627831080B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDA387ED-2BE0-4DEA-A9E3-627831080B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDA387ED-2BE0-4DEA-A9E3-627831080B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDA387ED-2BE0-4DEA-A9E3-627831080B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08547697-653F-48E8-8E5E-F19865A6BB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08547697-653F-48E8-8E5E-F19865A6BB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08547697-653F-48E8-8E5E-F19865A6BB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08547697-653F-48E8-8E5E-F19865A6BB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
