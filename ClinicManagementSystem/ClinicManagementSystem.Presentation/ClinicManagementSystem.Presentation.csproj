@@ -46,22 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrlPersonDetails.cs">
+    <Compile Include="Doctors\frmAddDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\frmAddDoctor.Designer.cs">
+      <DependentUpon>frmAddDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors\frmDoctorDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\frmDoctorDetails.Designer.cs">
+      <DependentUpon>frmDoctorDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors\frmListDoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\frmListDoctors.Designer.cs">
+      <DependentUpon>frmListDoctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\ctrlPersonDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlPersonDetails.Designer.cs">
+    <Compile Include="Persons\ctrlPersonDetails.Designer.cs">
       <DependentUpon>ctrlPersonDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListPatients.cs">
+    <Compile Include="Patients\frmListPatients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListPatients.Designer.cs">
+    <Compile Include="Patients\frmListPatients.Designer.cs">
       <DependentUpon>frmListPatients.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPatientDetails.cs">
+    <Compile Include="Patients\frmPatientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPatientDetails.Designer.cs">
+    <Compile Include="Patients\frmPatientDetails.Designer.cs">
       <DependentUpon>frmPatientDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Persons\frmAddEditPerson.cs">
@@ -84,13 +102,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ctrlPersonDetails.resx">
+    <EmbeddedResource Include="Doctors\frmAddDoctor.resx">
+      <DependentUpon>frmAddDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\frmDoctorDetails.resx">
+      <DependentUpon>frmDoctorDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\frmListDoctors.resx">
+      <DependentUpon>frmListDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\ctrlPersonDetails.resx">
       <DependentUpon>ctrlPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListPatients.resx">
+    <EmbeddedResource Include="Patients\frmListPatients.resx">
       <DependentUpon>frmListPatients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPatientDetails.resx">
+    <EmbeddedResource Include="Patients\frmPatientDetails.resx">
       <DependentUpon>frmPatientDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persons\frmAddEditPerson.resx">

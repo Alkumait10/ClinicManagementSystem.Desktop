@@ -195,6 +195,23 @@ namespace ClinicManagementSystem.Presentation
                 makeAsPatientToolStripMenuItem.Enabled = false;
             else
                 makeAsPatientToolStripMenuItem.Enabled = true;
+
+
+            if (clsDoctor.IsDoctorExist(PersonID))
+                makeAsDoctorToolStripMenuItem.Enabled = false;
+            else
+                makeAsDoctorToolStripMenuItem.Enabled = true;
+        }
+
+        private void makeAsDoctorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int PersonID = (int)dgvPersons.CurrentRow.Cells[0].Value;
+            string Name = (string)dgvPersons.CurrentRow.Cells[1].Value;
+
+            frmAddDoctor frm = new frmAddDoctor(PersonID, Name);
+            frm.ShowDialog();
+
+            frmListPersons_Load(null, null);
         }
     }
 }

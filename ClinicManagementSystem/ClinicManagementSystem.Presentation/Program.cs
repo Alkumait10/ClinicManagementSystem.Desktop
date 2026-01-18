@@ -17,7 +17,8 @@ namespace ClinicManagementSystem.Presentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmListPersons());
-            Application.Run(new frmListPatients());
+            //Application.Run(new frmListPatients());
+            Application.Run(new frmListDoctors());
         }
     }
 }
