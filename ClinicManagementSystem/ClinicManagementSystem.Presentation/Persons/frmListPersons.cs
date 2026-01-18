@@ -173,5 +173,28 @@ namespace ClinicManagementSystem.Presentation
 
             frmListPersons_Load(null, null);
         }
+
+        private void makeAsPatientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int PersonID = (int)dgvPersons.CurrentRow.Cells[0].Value;
+
+            if (MessageBox.Show("Are you sure you want to register this person as a patient?", "Confirm registery", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (clsPatient.AddNewPatient(PersonID))
+                    MessageBox.Show("Patient registered successfully", "Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Failed to make this person as patient", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            int PersonID = (int)dgvPersons.SelectedRows[0].Cells["PersonID"].Value;
+
+            if (clsPatient.IsPatientExist(PersonID))
+                makeAsPatientToolStripMenuItem.Enabled = false;
+            else
+                makeAsPatientToolStripMenuItem.Enabled = true;
+        }
     }
 }
