@@ -1,6 +1,7 @@
-﻿using System;
+﻿using ClinicManagementSystem.DataAccess;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using ClinicManagementSystem.DataAccess;
 
 
 namespace ClinicManagementSystem.BuisnessLogic
@@ -42,6 +43,11 @@ namespace ClinicManagementSystem.BuisnessLogic
         public static DataTable GetAllDoctors()
         {
             return clsDoctorData.GetAllDoctors();
+        }
+
+        public static List<Tuple<int, string>> GetDoctors()
+        {
+            return clsDoctorData.GetDoctors();
         }
 
         public static bool DeleteDoctor(int ID)

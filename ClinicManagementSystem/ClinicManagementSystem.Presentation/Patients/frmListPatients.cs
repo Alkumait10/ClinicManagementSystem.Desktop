@@ -156,5 +156,16 @@ namespace ClinicManagementSystem.Presentation
                     MessageBox.Show("Patient is not deleted due to data connected to it.", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void addNewAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int PatientID = (int)dgvPatients.CurrentRow.Cells[0].Value;
+            string Name = (string)dgvPatients.CurrentRow.Cells[2].Value;
+
+            frmAddAppointment frm = new frmAddAppointment(PatientID, Name);
+            frm.ShowDialog();
+
+            frmListPatients_Load(null, null);
+        }
     }
 }

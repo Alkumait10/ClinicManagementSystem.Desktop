@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 
 namespace ClinicManagementSystem.DataAccess
@@ -146,5 +147,32 @@ namespace ClinicManagementSystem.DataAccess
                 return dt;
             }
         }
+
+        public static List<Tuple<int, string>> GetDoctors()
+        {
+            var doctors = new List<Tuple<int, string>>();
+
+            string query = @"Select Doctors.DoctorID,Persons.Name
+                             from Doctors inner join Persons on Doctors.PersonID = Persons.PersonID;";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            doctors.Add(Tuple.Create(reader.GetInt32(0), reader.GetString(1)));
+                        }
+                    }
+                }
+
+                return doctors;
+            }
+        }
+
     }
 }

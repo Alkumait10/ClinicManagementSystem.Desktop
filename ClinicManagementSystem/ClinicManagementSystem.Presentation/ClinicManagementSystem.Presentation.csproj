@@ -64,6 +64,12 @@
     <Compile Include="Doctors\frmListDoctors.Designer.cs">
       <DependentUpon>frmListDoctors.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddAppointment.Designer.cs">
+      <DependentUpon>frmAddAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persons\ctrlPersonDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Doctors\frmListDoctors.resx">
       <DependentUpon>frmListDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddAppointment.resx">
+      <DependentUpon>frmAddAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persons\ctrlPersonDetails.resx">
       <DependentUpon>ctrlPersonDetails.cs</DependentUpon>
