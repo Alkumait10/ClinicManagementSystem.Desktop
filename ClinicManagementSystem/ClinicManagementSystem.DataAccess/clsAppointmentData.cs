@@ -11,7 +11,7 @@ namespace ClinicManagementSystem.DataAccess
         {
             var dt = new DataTable();
 
-            string query = @"Select * From Appointments;";
+            string query = @"Select * From Appointments_View;";
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
@@ -239,5 +239,78 @@ namespace ClinicManagementSystem.DataAccess
                 }
             }
         }
+
+        public static bool UpdateAppointmentMedicalRecordID(int AppointmentID, int MedicalRecordID)
+        {
+            int rowsAffected = 0;
+
+            string query = @"Update Appointments
+                             Set MedicalRecordID = @MedicalRecordID
+                             Where AppointmentID = @AppointmentID;";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
+                    command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (Exception)
+                    {
+                        rowsAffected = 0;
+                    }
+
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                    return (rowsAffected > 0);
+                }
+            }
+        }
+
+        public static bool UpdateAppointmentPaymentID(int AppointmentID, int PaymentID)
+        {
+            int rowsAffected = 0;
+
+            string query = @"Update Appointments
+                             Set PaymentID = @PaymentID
+                             Where AppointmentID = @AppointmentID;";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PaymentID", PaymentID);
+                    command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (Exception)
+                    {
+                        rowsAffected = 0;
+                    }
+
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                    return (rowsAffected > 0);
+                }
+            }
+        }
+
     }
 }

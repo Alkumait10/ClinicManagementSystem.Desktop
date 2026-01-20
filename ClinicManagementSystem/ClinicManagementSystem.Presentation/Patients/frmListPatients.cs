@@ -165,7 +165,17 @@ namespace ClinicManagementSystem.Presentation
             frmAddAppointment frm = new frmAddAppointment(PatientID, Name);
             frm.ShowDialog();
 
-            frmListPatients_Load(null, null);
+            this.Close();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            int PatientID = (int)dgvPatients.SelectedRows[0].Cells["PatientID"].Value;
+
+            if (clsAppointment.IsAppointmentExists(PatientID))
+                addNewAppointmentToolStripMenuItem.Enabled = false;
+            else
+                addNewAppointmentToolStripMenuItem.Enabled = true;
         }
     }
 }

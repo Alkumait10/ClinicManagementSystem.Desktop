@@ -77,9 +77,20 @@ namespace ClinicManagementSystem.BuisnessLogic
                 return null;
         }
 
-        public static bool IsAppointmentExists(int AppointmentID)
+        public static bool IsAppointmentExists(int PatientID)
         {
-            return clsAppointmentData.IsAppointmentExists(AppointmentID);
+            return clsAppointmentData.IsAppointmentExists(PatientID);
         }
+
+        public static bool AttachMedicalRecordToAppointment(int AppointmentID, int MedicalRecordID)
+        {
+            return clsAppointmentData.UpdateAppointmentMedicalRecordID(AppointmentID, MedicalRecordID);
+        }
+
+        public static bool AttachPaymentToAppointment(int AppointmentID, int PaymentID)
+        {
+            return clsAppointmentData.UpdateAppointmentPaymentID(AppointmentID, PaymentID);
+        }
+
     }
 }
