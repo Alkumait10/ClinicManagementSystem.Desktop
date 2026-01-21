@@ -98,6 +98,12 @@ namespace ClinicManagementSystem.Presentation
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
+            if (dgvMedicalRecords.CurrentRow == null)
+            {
+                e.Cancel = true;
+                return;
+            }
+
             int MedicalRecordID = (int)dgvMedicalRecords.CurrentRow.Cells["MedicalRecordID"].Value;
 
             bool hasPrescription = clsPrescription.IsPrescriptionExists(MedicalRecordID);

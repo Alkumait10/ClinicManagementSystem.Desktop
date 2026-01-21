@@ -189,6 +189,12 @@ namespace ClinicManagementSystem.Presentation
 
         private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            if (dgvPersons.CurrentRow == null)
+            {
+                e.Cancel = true;
+                return;
+            }
+
             int PersonID = (int)dgvPersons.SelectedRows[0].Cells["PersonID"].Value;
 
             if (clsPatient.IsPatientExist(PersonID))

@@ -159,6 +159,12 @@ namespace ClinicManagementSystem.Presentation
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
+            if (dgvAppointments.CurrentRow == null)
+            {
+                e.Cancel = true;
+                return;
+            }
+
             var cellValue = dgvAppointments.CurrentRow.Cells["MedicalRecordID"].Value;
 
             bool hasMedicalRecord = cellValue != DBNull.Value && cellValue != null && cellValue.ToString() != "";

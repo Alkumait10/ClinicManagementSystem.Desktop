@@ -160,5 +160,14 @@ namespace ClinicManagementSystem.Presentation
                     MessageBox.Show("Doctor is not deleted due to data connected to it.", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (dgvDoctors.CurrentRow == null)
+            {
+                e.Cancel = true;
+                return;
+            }
+        }
     }
 }
